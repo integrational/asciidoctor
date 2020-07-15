@@ -18,8 +18,8 @@ RUN apk update                                            \
  && apk add python2 --no-cache --purge                    \
  && gem install pygments.rb --no-document --clear-sources \
  && rm -rf /var/cache/apk/*                               \
- && gem cleanup                                           \
  && rm -rf /root/.gem
+# 'gem cleanup' failed in the above RUN, removed it
 
 # behave like base image
 WORKDIR /documents
